@@ -8,7 +8,7 @@ pip install -r requirements.txt
 ```
 ## Inference:
 ```
-python3 face_verification.py --image1 {yore imag1} --image2 {yore imag2}
+python3 cameraـaceـidentficatiton.py
 ```
 Use `face_identficatiton.ipynb` notebook to run
 

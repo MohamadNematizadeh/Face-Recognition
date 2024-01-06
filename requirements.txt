@@ -1,3 +1,5 @@
 opencv-python
 numpy
+matplotlib.pyplot
+arcade
 insightface

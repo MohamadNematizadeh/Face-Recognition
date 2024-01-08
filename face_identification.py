@@ -29,8 +29,8 @@ face_bank = "./face_bank"
 if opt.update:
         names = FaceIdentification.creat_face_bank(app,face_bank)
         print('face bank updated')
-
+        
 result = cv2.cvtColor(result,cv2.COLOR_BGR2RGB)
-cv2.imshow("result image ",result )
 cv2.imwrite("result.jpg",result)
-cv2.waitKey()
+
+

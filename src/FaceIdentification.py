@@ -2,7 +2,10 @@ import os
 import cv2
 import matplotlib.pyplot as plt
 import numpy as np
+import arcade
 from insightface.app import FaceAnalysis
+from game.pong import Game
+
 
 
 class FaceIdentification:
@@ -63,3 +66,23 @@ class FaceIdentification:
         return input_image
 
             
+    def face_id(results,input_image,face_bank):
+        for result in results:
+            cv2.rectangle(input_image,(int(result.bbox[0]),int(result.bbox[1])),(int(result.bbox[2]),int(result.bbox[3])),(0,255,0),2)
+            for person in face_bank:
+                face_bank_person_embedding = person["embedding"]
+                new_person_embedding = result["embedding"]
+                distance = np.sqrt(np.sum((face_bank_person_embedding - new_person_embedding) **2))
+                if distance < 25:
+                    cv2.putText(input_image,person["name"],
+                    (int(result.bbox[0])-50 , int(result.bbox[1])-10),
+                    cv2.FONT_HERSHEY_COMPLEX_SMALL,1,(0,0,255),2,cv2.LINE_AA)
+                    print("ok")
+                    game = Game()
+                    arcade.run()
+                    break
+            else:
+                cv2.putText(input_image,"Unknown",
+                    (int(result.bbox[0])-50 , int(result.bbox[1])-10),
+                    cv2.FONT_HERSHEY_COMPLEX_SMALL,1,(0,0,255),2,cv2.LINE_AA)
+                print("no")

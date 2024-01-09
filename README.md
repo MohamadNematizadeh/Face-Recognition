@@ -24,7 +24,7 @@ python Face_Verification.py --image1 {YORE IMAGE} --image2 {YORE IMAGE}
 
 For face identification, run the following command:
 ```
-python nference_identification.py --input {YORE IMAGE} --update
+python face_identification.py --input {YORE IMAGE} --update
 ```
 Then run same command as above with `--update` argument. Note that After each change in `./face_bank` directory, you should use `--update` again.
 

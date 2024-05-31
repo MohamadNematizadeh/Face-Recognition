@@ -1,4 +1,4 @@
-# Face Recognition 🧑
+# Face Recognition 🧑👩‍🦰
 Real-time face recognition in unconstrained environments, based on [InsightFace](https://github.com/deepinsight/insightface). 
  🧑
 
